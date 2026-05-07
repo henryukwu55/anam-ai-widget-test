@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anam AI Widget Test</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+      }
+      h1 {
+        margin: 0 0 10px 0;
+        color: #333;
+      }
+      .status {
+        background: #e8f5e9;
+        color: #2e7d32;
+        padding: 10px;
+        border-radius: 8px;
+        margin: 20px 0;
+        font-size: 14px;
+      }
+      .note {
+        background: #f0f0f0;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+        text-align: left;
+      }
+      .checklist {
+        text-align: left;
+        margin-top: 15px;
+        padding-left: 20px;
+      }
+      .checklist li {
+        margin: 8px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🤖 Anam AI Assistant</h1>
+      <div class="status">✅ Widget Active • Text Input Enabled</div>
+      <p>Test the AI assistant using the widget below.</p>
+
+      <div class="note">
+        <strong>📋 Verification Checklist:</strong>
+        <ul class="checklist">
+          <li>
+            ✓ Look for chat widget in <strong>bottom-right corner</strong>
+          </li>
+          <li>
+            ✓ <strong>Text input field</strong> should be visible at bottom of
+            chat
+          </li>
+          <li>✓ Type a message and press Enter to send</li>
+          <li>✓ AI should respond to your message</li>
+        </ul>
+      </div>
+
+      <!-- YOUR EXACT WIDGET CODE - Text input is enabled via ui-text-input="true" -->
+      <anam-agent
+        agent-id="87cec858-0946-4d44-9a8c-b680ea5f8c19"
+        ui-text-input="true"
+      ></anam-agent>
+      <script src="https://unpkg.com/@anam-ai/agent-widget" async></script>
+      <!-- END OF YOUR WIDGET CODE -->
+    </div>
+
+    <!-- Debug script to verify widget loaded correctly -->
+    <script>
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          const widget = document.querySelector("anam-agent");
+          if (widget) {
+            console.log("✅ Anam widget found");
+            console.log(
+              "Text input enabled:",
+              widget.getAttribute("ui-text-input")
+            );
+          } else {
+            console.error("❌ Anam widget not found - check if script loaded");
+          }
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
