@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,10 @@
     <title>Anam AI Widget Test</title>
     <style>
       body {
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
         margin: 0;
         padding: 20px;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -78,7 +81,7 @@
 
       <!-- YOUR EXACT WIDGET CODE - Text input is enabled via ui-text-input="true" -->
       <anam-agent
-        agent-id="87cec858-0946-4d44-9a8c-b680ea5f8c19"
+        agent-id="1d9e576a-35c3-45ec-96e4-1cc58a084f4f"
         ui-text-input="true"
       ></anam-agent>
       <script src="https://unpkg.com/@anam-ai/agent-widget" async></script>
@@ -94,7 +97,7 @@
             console.log("✅ Anam widget found");
             console.log(
               "Text input enabled:",
-              widget.getAttribute("ui-text-input")
+              widget.getAttribute("ui-text-input"),
             );
           } else {
             console.error("❌ Anam widget not found - check if script loaded");
